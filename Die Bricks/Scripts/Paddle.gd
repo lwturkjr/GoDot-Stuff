@@ -24,7 +24,8 @@ func _physics_process(delta):
 	motion = move_and_slide(motion)
 
 func _input(event):
-	if event is InputEventKey and event.scancode == KEY_SPACE:
+	if event is InputEventKey and event.scancode == KEY_SPACE and not event.echo:
 		var ball = BALL_SCENE.instance()
 		ball.set_position(get_position()-Vector2(0, 16))
+		
 		get_tree().get_root().add_child(ball)
