@@ -1,0 +1,15 @@
+# Blender MTL File: 'CABALLO_low_poly.blend'
+# Material Count: 1
+
+newmtl Material.001
+Ns 86.274510
+Ka 1.000000 1.000000 1.000000
+Kd 0.049547 0.023813 0.008941
+Ks 0.030000 0.027306 0.013816
+Ke 0.000991 0.000476 0.000179
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd /home/lwturkjr/Assets/LowPolyHorse/caballo_lowpoly/caballo_txt.png
+map_Bump /home/lwturkjr/Assets/LowPolyHorse/caballo_lowpoly/caballo.png
+map_d /home/lwturkjr/Assets/LowPolyHorse/caballo_lowpoly/caballo_txt.png
