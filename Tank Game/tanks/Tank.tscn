@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Tank" type="KinematicBody2D"]
+
+[node name="Body" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Turret" type="Sprite" parent="."]
+editor/display_folded = true
+
+[node name="Muzzle" type="Position2D" parent="Turret"]
+
+[node name="GunTimer" type="Timer" parent="."]
