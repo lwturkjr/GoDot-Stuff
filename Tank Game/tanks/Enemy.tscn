@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://tanks/Tank.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tanks/EnemyTank.gd" type="Script" id=2]
+[ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36.9386, 37.1503 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 276.597
+
+[node name="Enemy" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+speed = 150
+turret_speed = 1.0
+detect_radius = 400
+
+[node name="Body" parent="." index="0"]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 268, 186, 80, 75 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Turret" parent="." index="2"]
+editor/display_folded = false
+texture = ExtResource( 3 )
+offset = Vector2( 30, 0 )
+region_enabled = true
+region_rect = Rect2( 371, 14, 60, 24 )
+
+[node name="DetectRadius" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius" index="0"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="DetectRadius" to="." method="_on_DetectRadius_body_entered"]
+[connection signal="body_exited" from="DetectRadius" to="." method="_on_DetectRadius_body_exited"]
