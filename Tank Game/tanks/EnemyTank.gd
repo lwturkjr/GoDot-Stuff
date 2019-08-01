@@ -8,7 +8,9 @@ export (int) var detect_radius
 var target = null
 
 func _ready():
-	$DetectRadius/CollisionShape2D.shape.radius = detect_radius
+	var circle = CircleShape2D.new()
+#	$DetectRadius/CollisionShape2D = circle
+#	$DetectRadius/CollisionShape2D.shape.radius = detect_radius
 
 func control(delta):
 	if parent is PathFollow2D:
@@ -25,7 +27,6 @@ func _process(delta):
 		$Turret.global_rotation = current_dir.linear_interpolate(target_dir, turret_speed * delta).angle()
 		
 func _on_DetectRadius_body_entered(body):
-	if body.name == "Player":
 		target = body
 
 func _on_DetectRadius_body_exited(body):
